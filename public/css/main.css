@@ -1,20 +1,31 @@
+
+@font-face {
+    font-family: 'Times New Roman';
+    src: url('../fonts/timesnewromanpsmt.ttf')  format('truetype');
+}
+
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Times New Roman", sans-serif;
+
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    line-height: 1.2;
 }
 
 header {
     padding: 6.5625vw 1.0417vw 0 1.0417vw;
     margin: 0 auto;
+    font-family: "Inter", sans-serif!important;
 }
 
 aside {
     float: left;
     position: fixed;
 }
-
+aside img {
+    height: 280px;
+}
 .title h1 {
     font-weight: 700;
     text-align: center;
@@ -24,7 +35,7 @@ aside {
     display: flex;
     gap: 2.7083vw;
     align-items: center;
-    font-size: 2.5vw;
+    font-size: 2.2vw;
     justify-content: center;
 }
 
@@ -37,7 +48,7 @@ main {
     padding: 3.6458vw 0.625vw 1.8333vw 0.625vw;
 
     margin: 0 auto;
-    font-size: 1.4583vw;
+    font-size: 1.3vw;
     border-bottom: 3px solid black;
 }
 
@@ -123,7 +134,7 @@ li a:hover:after {
 /* Main section */
 .main__title {
     padding-top: 3.6458vw;
-    font-size: 1.6667vw;
+    font-size: 1.4667vw;
     font-weight: 700;
     text-align: center;
     padding-bottom: 1.0417vw;
@@ -342,9 +353,10 @@ button {
 /* Footer */
 
 footer {
+    font-family: "Inter", sans-serif!important;
     margin: 0 auto;
     max-width: 56.6667vw;
-    font-size: 1.6667vw;
+    font-size: 1.4667vw;
     /* border-left: black 2px solid;
     border-left-width: 10%;
     border-left-height: 10%; */
@@ -357,7 +369,7 @@ footer {
     display: flex;
     justify-content: space-between;
     font-weight: 400;
-    font-size: 1.6667vw !important;
+    font-size: 1.4667vw !important;
     align-items: center;
 }
 
@@ -414,10 +426,10 @@ footer {
     top:0;
     -webkit-animation-name: fade;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 6s;
+    -webkit-animation-duration: 7s;
     animation-name: fade;
     animation-iteration-count: infinite;
-    animation-duration: 6s;
+    animation-duration: 7s;
 }
 
 @-webkit-keyframes fade {

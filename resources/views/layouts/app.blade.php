@@ -9,7 +9,7 @@
     @if(isset($post))
         <meta name="keywords" content="{{$post->keywords}}"/>
     @endif
-
+    <link rel="icon" href="http://localhost:8000/favicon.png" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

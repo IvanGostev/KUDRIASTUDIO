@@ -14,7 +14,7 @@ class MessageAdminController extends Controller
 {
     public function index()
     {
-        $messages = Message::all();
+        $messages = Message::latest();
         return view('admin.message.index', compact('messages'));
     }
 
