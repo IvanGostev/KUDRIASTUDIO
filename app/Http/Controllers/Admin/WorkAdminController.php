@@ -13,7 +13,7 @@ class WorkAdminController extends Controller
 {
     public function index()
     {
-        $works = Work::all();
+        $works = Work::orderBy('created_at', 'desc')->get();
         return view('admin.portfolio.index', compact('works'));
     }
 

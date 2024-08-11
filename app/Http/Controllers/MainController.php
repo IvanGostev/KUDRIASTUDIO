@@ -51,7 +51,9 @@ class MainController extends Controller
     }
     public function store(Request $request)
     {
-        Message::firstOrCreate($request->all());
+        $data = $request->all();
+        unset($data['_token']);
+        Message::firstOrCreate($data);
         return redirect()->route('contact')->with('msg', 'Successfully sent!');
     }
 }

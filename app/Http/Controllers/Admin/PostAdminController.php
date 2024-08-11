@@ -12,7 +12,7 @@ class PostAdminController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
 
         return view('admin.post.index', compact('posts'));
     }
@@ -33,7 +33,7 @@ class PostAdminController extends Controller
 
         $content = $request->input('content');
         $dom = new \DomDocument();
-        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        @$dom->loadHtml($content);
         $imageFile = $dom->getElementsByTagName('img');
 
         foreach ($imageFile as $item => $image) {
@@ -72,7 +72,7 @@ class PostAdminController extends Controller
 
         $content = $request->input('content');
         $dom = new \DomDocument();
-        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        @$dom->loadHtml($content);
         $images = $dom->getElementsByTagName('img');
 
         foreach ($images as $key => $img) {

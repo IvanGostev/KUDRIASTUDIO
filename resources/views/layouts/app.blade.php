@@ -9,8 +9,7 @@
     @if(isset($post))
         <meta name="keywords" content="{{$post->keywords}}"/>
     @endif
-    <link rel="icon" href="http://localhost:8000/favicon.png" type="image/png">
-
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}"  type='image/png'>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,6 +29,9 @@
         <li class="header__item"><a class="{{request()->path() == 'reviews' ? 'active' : ''}}" href="{{route('reviews')}}">REVIEWS</a></li>
         <li class="header__item"><a class="{{request()->path() == 'contact' ? 'active' : ''}}" href="{{route('contact')}}">CONTACT</a></li>
     </ul>
+    @if()
+    @elseif()
+    @endif
     <nav class="navbar">
         <a href="#" class="nav-logo">
             <img src="{{ asset('img/logo-mobile.svg')}}" alt="" />

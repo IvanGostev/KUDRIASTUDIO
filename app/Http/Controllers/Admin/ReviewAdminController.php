@@ -12,7 +12,8 @@ class ReviewAdminController extends Controller
 {
     public function index()
     {
-        $reviews = Review::all();
+        $reviews = Review::orderBy('created_at', 'desc')->get();
+
 
         return view('admin.review.index', compact('reviews'));
     }
