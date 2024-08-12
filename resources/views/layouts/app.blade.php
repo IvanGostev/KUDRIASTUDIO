@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KUDRYASTUDIO{{isset($post) ? ' - ' . $post->title : ''}}</title>
-    <meta name="description"
-          content="{{isset($post) ? $post->description : 'Discover KUDRIASTUDIO, where cinematic storytelling meets heartwarming love stories. Our unique style, inspired by cinema and beautiful aesthetics, captures the emotions and atmosphere of your special day with honesty and openness. Trust us to create a timeless and unforgettable visual masterpiece that reflects your passion and style.'}}">
     @if(isset($post))
+        <title>KUDRYASTUDIO{{' - ' . $post->title}}</title>
+        <meta name="description" content="{{$post->description}}">
         <meta name="keywords" content="{{$post->keywords}}"/>
+    @else
+        <title>{{seo()['title']}}</title>
+        <meta name="description" content="{{seo()['description']}}">
+        <meta name="keywords" content="{{seo()['keywords']}}"/>
     @endif
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}"  type='image/png'>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,9 +32,7 @@
         <li class="header__item"><a class="{{request()->path() == 'reviews' ? 'active' : ''}}" href="{{route('reviews')}}">REVIEWS</a></li>
         <li class="header__item"><a class="{{request()->path() == 'contact' ? 'active' : ''}}" href="{{route('contact')}}">CONTACT</a></li>
     </ul>
-    @if()
-    @elseif()
-    @endif
+
     <nav class="navbar">
         <a href="#" class="nav-logo">
             <img src="{{ asset('img/logo-mobile.svg')}}" alt="" />

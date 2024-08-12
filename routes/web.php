@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\MessageAdminController;
 use App\Http\Controllers\Admin\PostAdminController;
 use App\Http\Controllers\Admin\ReviewAdminController;
+use App\Http\Controllers\Admin\SeoAdminController;
 use App\Http\Controllers\Admin\WorkAdminController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
@@ -51,6 +52,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/', 'index')->name('admin.work.index');
         Route::post('/', 'store')->name('admin.work.store');
         Route::delete('{work}/destroy', 'destroy')->name('admin.work.destroy');
+    });
+    Route::controller(SeoAdminController::class)->prefix('seo')->group(function ()  {
+        Route::get('/', 'index')->name('admin.seo.index');
+        Route::get('/create', 'create')->name('admin.seo.create');
+        Route::post('/', 'store')->name('admin.seo.store');
+        Route::get('{seo}/edit', 'edit')->name('admin.seo.edit');
+        Route::patch('{seo}', 'update')->name('admin.seo.update');
+        Route::delete('{seo}/destroy', 'destroy')->name('admin.seo.destroy');
     });
 });
 
