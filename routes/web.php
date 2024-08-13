@@ -64,4 +64,4 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
