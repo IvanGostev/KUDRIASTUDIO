@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('works', function (Blueprint $table) {
             $table->id();
-            $table->string('src');
+            $table->string('url')->nullable();
+            $table->string('src')->nullable();
             $table->timestamps();
         });
     }

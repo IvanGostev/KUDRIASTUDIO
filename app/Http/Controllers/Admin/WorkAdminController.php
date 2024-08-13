@@ -24,12 +24,10 @@ class WorkAdminController extends Controller
 
         if (isset($dataReq['src'])) {
             $dataReq['src'] = Storage::disk('public')->put('/images', $dataReq['src']);
-            Work::create($dataReq);
         }
-
+        Work::create($dataReq);
         return redirect()->route('admin.work.index');
     }
-
     public function destroy(Work $work) {
         $work->delete();
         return redirect()->route('admin.work.index');

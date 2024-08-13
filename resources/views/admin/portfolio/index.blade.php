@@ -14,10 +14,21 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <form action="{{route('admin.work.store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('admin.work.store')}}" method="post"
+                                      enctype="multipart/form-data" style="display: flex; flex-direction: row; gap: 10px">
                                     @csrf
-                                    <input type="file" name="src">
-                                    <button class="btn btn-dark" type="submit">Add image</button>
+                                    <div class="form-group">
+                                        <input type="file" accept="video/mp4,video/x-m4v,video/*" name="src" style="border: 1px black solid">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>OR</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Enter the url" name="url">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-dark" type="submit">Add video</button>
+                                    </div>
                                 </form>
                                 <br>
                                 <h3 class="card-title">Portfolio</h3>
@@ -39,8 +50,16 @@
                                             <td>{{$work->id}}</td>
                                             <td>
                                                 <div>
-                                                    <img  height="200px" style="padding: 15px"
-                                                         src="{{ asset('storage/' . $work->src)}}">
+                                                    @if($work->url)
+                                                        <iframe src="{{$work->url}}" height="200" frameborder="0"
+                                                                allow="autoplay; fullscreen"
+                                                                allowfullscreen></iframe>
+                                                    @else
+                                                        <video height="200" controls>
+                                                            <source src="{{ asset('storage/' . $work->src)}}"
+                                                                    type="video/mp4">
+                                                        </video>
+                                                    @endif
                                                 </div>
                                             </td>
                                             <td>
@@ -63,7 +82,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
                                 <ul class="pagination pagination-sm m-0 float-right">
-{{--                                    {{ $works->links() }}--}}
+                                    {{--                                    {{ $works->links() }}--}}
                                 </ul>
                             </div>
                         </div>
