@@ -12,7 +12,7 @@
         <meta name="description" content="{{seo()['description']}}">
         <meta name="keywords" content="{{seo()['keywords']}}"/>
     @endif
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}"  type='image/png'>
+    <link rel="shortcut icon" href="{{ asset('/favicon.png') }}"  type='image/png'>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -83,8 +83,8 @@
             <li class="footer__item"><a class="{{request()->path() == 'contact' ? 'active' : ''}}" href="{{route('contact')}}">CONTACT</a></li>
         </ul>
         <div class="footer__social">
-            <a href=""><img src="{{ asset('img/inst.svg')}}" alt="" class="footer__inst" /></a>
-            <a href=""
+            <a href="https://www.instagram.com/kudryastudio/"><img src="{{ asset('img/inst.svg')}}" alt="" class="footer__inst" /></a>
+            <a href="https://www.facebook.com/kudryastudio/"
             ><img src="{{ asset('img/facebook.svg')}}" alt="" class="footer__facebook"
                 /></a>
         </div>
