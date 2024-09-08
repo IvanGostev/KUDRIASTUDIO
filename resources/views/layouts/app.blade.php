@@ -23,8 +23,27 @@
     <link rel="stylesheet" href="{{ asset("css/main.css")}}"/>
 </head>
 <body>
-<header>
-    <ul class="header__menu">
+<header style="position: relative">
+    <div class="language-switch" style="position: absolute; right: 5%; top: 10%">
+        <form action="{{route('language.switch')}}" method="post">
+            @csrf
+            <select onchange="this.form.submit()" name="language" class="form-control" style="font-size: 1.65vw;">
+                <option
+                    {{((session()->get('language') !== null ) and (session()->get('language') == 'en')) ? 'selected' : ''}} value="en">
+                    English
+                </option>
+                <option
+                    {{((session()->get('language') !== null ) and (session()->get('language') == 'ru')) ? 'selected' : ''}} value="ru">
+                    Русский
+                </option>
+                <option
+                    {{((session()->get('language') !== null ) and (session()->get('language') == 'es')) ? 'selected' : ''}}  value="es">
+                    Español
+                </option>
+            </select>
+        </form>
+    </div>
+    <ul class="header__menu" >
         <li class="header__item"><a class="{{request()->path() == '/' ? 'active' : ''}}"
                                     href="{{route('index')}}">{{__('main.home')}}</a></li>
         <li class="header__item"><a class="{{request()->path() == 'portfolio' ? 'active' : ''}}"
@@ -37,25 +56,6 @@
                                     href="{{route('reviews')}}">{{__('main.reviews')}}</a></li>
         <li class="header__item"><a class="{{request()->path() == 'contact' ? 'active' : ''}}"
                                     href="{{route('contact')}}">{{__('main.contact')}}</a></li>
-        <li class="header__item">
-            <form action="{{route('language.switch')}}" method="post">
-                @csrf
-                <select onchange="this.form.submit()" name="language" class="form-control" style="font-size: 2vw;">
-                    <option
-                        {{((session()->get('language') !== null ) and (session()->get('language') == 'en')) ? 'selected' : ''}} value="en">
-                        English
-                    </option>
-                    <option
-                        {{((session()->get('language') !== null ) and (session()->get('language') == 'ru')) ? 'selected' : ''}} value="ru">
-                        Русский
-                    </option>
-                    <option
-                        {{((session()->get('language') !== null ) and (session()->get('language') == 'es')) ? 'selected' : ''}}  value="es">
-                        Español
-                    </option>
-                </select>
-            </form>
-        </li>
     </ul>
 
     <nav class="navbar">

@@ -56,14 +56,29 @@ return [
                 of the package.",
 
 
-    'contact-desc' => "“We couldn’t have asked for a more magical wedding day, and it’s all
-            thanks to Kudryastudio! From the initial consultation to the final
-            video edit, the team was professional, attentive, and incredibly
-            talented. They captured every special moment beautifully, making us
-            feel at ease throughout the entire process. The final video exceeded
-            our expectations, and we are thrilled to have such a wonderful
-            keepsake to relive our wedding day. Thank you, Kudryastudio, for
-            preserving our memories so perfectly!”",
+    'contact-desc' => "<span style='font-size: 22px'>Contact KUDRYASTUDIO | Professional Wedding Videography in Spain</span> <br>
+
+We’re delighted that you’re interested in our cinematic wedding film services. Whether you're planning a wedding in Madrid, Barcelona, Valencia, or anywhere across Spain and Europe, get in touch with us to discuss how we can turn your special day into a timeless film.
+<br>
+<br>
+<span style='font-size: 22px'> Why Choose KUDRYASTUDIO?</span> <br>
+
+At KUDRYASTUDIO, we offer a unique approach to wedding videography. Each of our films is a personal story, full of emotions and beauty. Our team of professionals is ready to create a cinematic masterpiece for you to cherish for a lifetime.
+<br>
+<br>
+<span style='font-size: 22px'>Contact Information</span> <br>
+
+Phone: +34 653 21 95 80
+
+<br>
+<br>
+<span style='font-size: 22px'>Where We Work</span> <br>
+
+We provide wedding videography services across Spain, including Madrid, Barcelona, and Valencia, and we’re happy to travel for destination weddings across Europe.
+<br>
+<br>
+<span style='font-size: 22px'>Get in Touch Today</span> <br>
+Fill out the contact form below to discuss your wedding details and learn how we can help capture your special day on film.",
     'contact-names' => 'Alex & Maria',
     'form' => 'Form',
     'form-name' => 'Name',

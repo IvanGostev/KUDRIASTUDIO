@@ -56,14 +56,30 @@ return [
                 del paquete.",
 
 
-    'contact-desc' => "“No podríamos haber pedido un día de boda más mágico, y es todo
-            ¡gracias a Kudryastudio! Desde la consulta inicial hasta la final
-            edición de video, el equipo fue profesional, atento e increíblemente
-            talentoso. Capturaron cada momento especial maravillosamente, haciéndonos
-            siéntete a gusto durante todo el proceso. El video final superó
-            nuestras expectativas, y estamos encantados de tener una experiencia tan maravillosa
-            recuerdo para revivir el día de nuestra boda. Gracias, Kudryastudio, por
-            ¡preservando nuestros recuerdos tan perfectamente!”",
+    'contact-desc' => "<span style='font-size: 22px'>Contacta con KUDRYASTUDIO / Videografía Profesional de Bodas en España</span> <br>
+
+Estamos encantados de que esté interesado en nuestros servicios cinematográficos de bodas. Ya sea que esté planeando una boda en Madrid, Barcelona, Valencia o en cualquier lugar de España y Europa, póngase en contacto con nosotros para analizar cómo podemos convertir su día especial en una película atemporal.
+<br>
+<br>
+<span style='font-size: 22px'>¿Por Qué Elegir KUDRYASTUDIO?</span> <br>
+
+En KUDRYASTUDIO, ofrecemos un enfoque único para la videografía de bodas. Cada una de nuestras películas es una historia personal, llena de emociones y belleza. Nuestro equipo de profesionales está listo para crear una obra maestra cinematográfica que apreciará durante toda la vida.
+<br>
+<br>
+<span style='font-size: 22px'>Información de Contacto</span> <br>
+
+Teléfono: +34 653 21 95 80
+
+<br>
+<br>
+<span style='font-size: 22px'>Dónde Trabajamos</span> <br>
+Brindamos servicios de videografía de bodas en toda España, incluidos Madrid, Barcelona y Valencia, y estamos encantados de viajar para bodas de destino en toda Europa.
+<br>
+<br>
+<span style='font-size: 22px'>Póngase en Contacto Hoy Mismo</span> <br>
+Complete el formulario de contacto a continuación para analizar los detalles de su boda y conocer cómo podemos ayudarlo a capturar su día especial en una película.",
+
+
     'contact-names' => 'Alex y Maria',
     'form' => 'Formulario',
     'form-name' => 'Nombre',

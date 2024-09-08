@@ -273,7 +273,9 @@ li a:hover:after {
 .contact__text {
     padding-top: 2.0833vw;
 }
-
+.contact__text span {
+    font-weight: 700;
+}
 .contact__names {
     padding-top: 2.0833vw;
     margin-bottom: 4.1667vw;

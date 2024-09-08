@@ -5,10 +5,10 @@
     </section>
     <section class="contact">
         <div class="contact__img">
-            <img src="{{ asset('img/contact.png')}}" alt="" />
+            <img src="{{ asset('img/contact.jpg')}}" alt="" />
         </div>
         <p class="contact__text">
-            {{__('main.contact-desc')}}
+            {!!__('main.contact-desc')!!}
         </p>
         <p class="contact__names">• {{__('main.contact-names')}}</p>
     </section>
