@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section class="title">
-        <h1>Eco-Friendly Weddings</h1>
+        <h1>{!! $post->title !!}</h1>
     </section>
     <section class="single-post">
         <div class="single-post__content">
@@ -10,7 +10,7 @@
     </section>
 
     <section class="title title-recommendations">
-        <h1>Recommendations</h1>
+        <h1>{{__('main.recommendations')}}</h1>
     </section>
     <section class="recommendations">
         @foreach($posts as $postRec)

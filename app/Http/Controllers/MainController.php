@@ -32,9 +32,9 @@ class MainController extends Controller
     }
     public function portfolio()
     {
-        $workMain = Work::latest()->first();
-        $works = Work::latest()->whereNot('id', $workMain->id)->get();
-        return view('portfolio', compact('works', 'workMain'));
+
+        $works = Work::latest()->get();
+        return view('portfolio', compact('works'));
     }
     public function price()
     {

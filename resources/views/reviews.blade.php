@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section class="title">
-        <h1>Reviews</h1>
+        <h1>{{__('main.title-reviews')}}</h1>
     </section>
     <section class="reviews">
         @foreach($reviews as $review)

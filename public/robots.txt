@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+Sitemap: https://kudryastudio.com/sitemap
+Disallow: /admin

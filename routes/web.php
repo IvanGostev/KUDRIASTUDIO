@@ -1,16 +1,29 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryAdminController;
 use App\Http\Controllers\Admin\MessageAdminController;
 use App\Http\Controllers\Admin\PostAdminController;
 use App\Http\Controllers\Admin\ReviewAdminController;
 use App\Http\Controllers\Admin\SeoAdminController;
 use App\Http\Controllers\Admin\WorkAdminController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::controller(SitemapController::class)->group(function ()  {
+    Route::get('/sitemap', 'index');
+    Route::get('/sitemap/posts', 'posts');
+    Route::get('/sitemap/categories', 'categories');
+});
 
+
+
+Route::controller(LanguageController::class)->group(function ()  {
+    Route::post('/language-switch', 'switch')->name('language.switch');
+});
 
 Route::controller(MainController::class)->group(function ()  {
     Route::get('/', 'index')->name('index');
@@ -22,6 +35,7 @@ Route::controller(MainController::class)->group(function ()  {
 });
 Route::controller(PostController::class)->prefix('blog')->group(function ()  {
     Route::get('/', 'index')->name('post.index');
+    Route::get('/search', 'search')->name('post.search');
     Route::get('{post}~{slug}', 'show')->name('post.show');
 });
 
@@ -36,6 +50,17 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::patch('{post}', 'update')->name('admin.post.update');
         Route::delete('{post}/destroy', 'destroy')->name('admin.post.destroy');
     });
+    Route::group(['prefix' => 'categories',], function () {
+        Route::get('/', [CategoryAdminController::class, 'index'])->name('admin.category.index');
+        Route::get('/create', [CategoryAdminController::class, 'create'])->name('admin.category.create');
+        Route::post('/', [CategoryAdminController::class, 'store'])->name('admin.category.store');
+        Route::get('/edit/{category}', [CategoryAdminController::class, 'edit'])->name('admin.category.edit');
+        Route::patch('/{category}', [CategoryAdminController::class, 'update'])->name('admin.category.update');
+        Route::delete('/{category}', [CategoryAdminController::class, 'destroy'])->name('admin.category.destroy');
+
+    });
+
+
     Route::controller(ReviewAdminController::class)->prefix('reviews')->group(function ()  {
         Route::get('/', 'index')->name('admin.review.index');
         Route::get('/create', 'create')->name('admin.review.create');
@@ -64,4 +89,4 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 
-Auth::routes(['register' => false]);
+Auth::routes();

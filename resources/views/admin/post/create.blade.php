@@ -38,6 +38,25 @@
                                                 <input type="text" name="title" class="form-control"
                                                        placeholder="Enter ...">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Language</label>
+                                                <select class="form-control" name="lang" id="">
+                                                    <option value="en">En</option>
+                                                    <option value="ru">Ru</option>
+                                                    <option value="es">Es</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Category</label>
+                                                <select class="form-control" name="category_id">
+                                                    @foreach($categories as $category)
+                                                        <option value="{{$category->id}}">{{$category->title}} | {{$category->ru_title}} | {{$category->es_title}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">

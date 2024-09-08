@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Queue\CallQueuedClosure;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -17,10 +19,10 @@ class PostAdminController extends Controller
         return view('admin.post.index', compact('posts'));
     }
 
-
     public function create()
     {
-        return view('admin.post.create');
+        $categories = Category::all();
+        return view('admin.post.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -56,10 +58,10 @@ class PostAdminController extends Controller
         return redirect()->route('admin.post.index');
     }
 
-
     public function edit(Post $post)
     {
-        return view('admin.post.edit', compact('post'));
+        $categories = Category::all();
+        return view('admin.post.edit', compact('post', 'categories'));
     }
 
     public function update(Request $request, Post $post)
@@ -96,7 +98,6 @@ class PostAdminController extends Controller
         return redirect()->route('admin.post.index');
 
     }
-
 
     public function destroy(Post $post) {
         $post->delete();
