@@ -10,7 +10,7 @@
         <p class="contact__text">
             {!!__('main.contact-desc')!!}
         </p>
-        <p class="contact__names">• {{__('main.contact-names')}}</p>
+        <p class="contact__names"></p>
     </section>
     <section class="title">
         <h1>{{__('main.form')}}</h1>

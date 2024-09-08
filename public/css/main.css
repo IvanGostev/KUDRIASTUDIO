@@ -200,7 +200,6 @@ li a:hover:after {
 /* Price section */
 
 .price__title {
-    font-weight: 700;
     font-weight: bold;
     text-align: center;
 }
@@ -274,7 +273,7 @@ li a:hover:after {
     padding-top: 2.0833vw;
 }
 .contact__text span {
-    font-weight: 700;
+    font-weight: bold!important;
 }
 .contact__names {
     padding-top: 2.0833vw;
@@ -659,7 +658,9 @@ footer {
     .header__menu {
         display: none;
     }
-
+    .language-switch {
+        display: none;
+    }
     .navbar {
         display: flex;
         justify-content: space-between;
