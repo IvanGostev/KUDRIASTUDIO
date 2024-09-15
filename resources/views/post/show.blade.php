@@ -8,8 +8,7 @@
             {!! $post->content !!}
         </div>
     </section>
-
-    <section class="title title-recommendations">
+    <section class="title title-recommendations" >
         <h1>{{__('main.recommendations')}}</h1>
     </section>
     <section class="recommendations">

@@ -27,7 +27,8 @@ class MainController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->take(3)->get();
+        $language = session()->get('language') ?? 'en';
+        $posts = Post::where('lang', $language)->latest()->take(3)->get();
         return view('index', compact('posts'));
     }
     public function portfolio()
