@@ -31,25 +31,31 @@ class MainController extends Controller
         $posts = Post::where('lang', $language)->latest()->take(3)->get();
         return view('index', compact('posts'));
     }
+
     public function portfolio()
     {
 
         $works = Work::latest()->get();
         return view('portfolio', compact('works'));
     }
+
     public function price()
     {
         return view('price');
     }
+
     public function reviews()
     {
-        $reviews = Review::latest()->paginate(2);
+        $language = session()->get('language') ?? 'en';
+        $reviews = Review::where('lang', $language)->latest()->paginate(2);
         return view('reviews', compact('reviews'));
     }
+
     public function contact()
     {
         return view('contact');
     }
+
     public function store(Request $request)
     {
         $data = $request->all();

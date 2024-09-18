@@ -26,12 +26,13 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{ route('admin.review.store') }}" enctype="multipart/form-data" method="post">
+                            <form action="{{ route('admin.review.store') }}" enctype="multipart/form-data"
+                                  method="post">
                                 @csrf
                                 <div class="card-body">
 
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <!-- text input -->
                                             <div class="form-group">
                                                 <label>Title</label>
@@ -39,7 +40,17 @@
                                                        placeholder="Enter ...">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Language</label>
+                                                <select class="form-control" name="lang" id="">
+                                                    <option value="en">En</option>
+                                                    <option value="ru">Ru</option>
+                                                    <option value="es">Es</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
                                             <!-- text input -->
                                             <div class="form-group">
                                                 <label>Names</label>
@@ -73,26 +84,25 @@
                                             <!-- textarea -->
                                             <div class="form-group">
                                                 <label>Main text</label>
-                                                <textarea  required="" class="form-control" rows="15"
+                                                <textarea required="" class="form-control" rows="15"
                                                           name="text"></textarea>
                                             </div>
                                         </div>
 
-                                    <link rel="stylesheet"
-                                          href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
-                                    <script
-                                        src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+                                        <link rel="stylesheet"
+                                              href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
+                                        <script
+                                            src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
 
 
+                                    </div>
 
-                                </div>
 
+                                    <!-- /.card-body -->
 
-                                <!-- /.card-body -->
-
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-dark">Submit</button>
-                                </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-dark">Submit</button>
+                                    </div>
                             </form>
                         </div>
                         <!-- /.card -->
@@ -109,6 +119,5 @@
         </section>
         <!-- /.content -->
     </div>
-
 
 @endsection
