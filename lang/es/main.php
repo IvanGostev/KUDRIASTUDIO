@@ -2,7 +2,7 @@
 return [
     'hello' => '¡Hola! Somos Alisa y Sam.',
     'text-1' => 'Rodamos bodas e historias de amor. Kudrya es un apellido real. Nosotros somos
-            los líderes de KUDRIASTUDIO. No fue por casualidad que llegamos a
+            los líderes de KUDRYASTUDIO. No fue por casualidad que llegamos a
             nuestro estilo. Nos inspiramos en el cine, las viejas películas de Hollywood, la televisión
             series, hermosos anuncios de perfumes. Nos encanta filmar un
             producción: trabajar con la luz, con las personas. Pero también nos encanta

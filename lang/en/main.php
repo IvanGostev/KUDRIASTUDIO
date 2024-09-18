@@ -2,7 +2,7 @@
 return [
     'hello' => 'Hello! We are Alisa and Sam.',
     'text-1' => 'We shoot weddings and love stories. Kudrya is a real surname. We are
-            the leaders of KUDRIASTUDIO. It was not by chance that we came to
+            the leaders of KUDRYASTUDIO. It was not by chance that we came to
             our style. We are inspired by cinema, old Hollywood films, TV
             series, beautiful perfume advertisements. We love filming a
             production: working with light, with people. But we also love to

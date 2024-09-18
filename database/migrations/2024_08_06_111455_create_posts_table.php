@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(Category::class)->constrained();
 
             $table->string('lang')->default('en');
-            $table->string('title');
+            $table->longText('title');
             $table->text('about');
             $table->longText('content');
             $table->string('slug');
