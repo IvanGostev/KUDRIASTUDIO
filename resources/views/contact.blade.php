@@ -15,7 +15,7 @@
     <section class="title">
         <h1>{{__('main.form')}}</h1>
     </section>
-    <form class="form" action="{{route('contact.store')}}" method="post">
+    <form class="form" action="{{route('contact.store', ['locale' => session()->get('language') ?? 'en'])}}" method="post">
         @if (session()->has('msg'))
             <div class="form__group" style="text-align: center; font-weight: 700;">
                <p>{{ session()->get('msg') }}</p>
@@ -23,15 +23,15 @@
             @else
             <div class="form__group">
                 <label>{{__('main.form-name')}}</label>
-                <input type="text" name="name" />
+                <input type="text" name="name" required />
             </div>
             <div class="form__group">
                 <label>{{__('main.form-phone')}}</label>
-                <input type="phone" name="phone" />
+                <input type="phone" name="phone"  required/>
             </div>
             <div class="form__group">
                 <label>{{__('main.form-social')}}</label>
-                <input type="text" name="social" />
+                <input type="text" name="social" required />
             </div>
             <div class="form__group">
                 <button type="submit">{{__('main.form-send')}}</button>

@@ -23,7 +23,7 @@ class PostController extends Controller
         $selectedCategoryID = $request->category_id;
         return view('post.index', compact('posts', 'categories', 'selectedCategoryID'));
     }
-    public function show(Post $post)
+    public function show(string $locale, Post $post)
     {
         $language = session()->get('language') ?? 'en';
         $posts = Post::where('lang', $language)->latest()->whereNot('id', $post->id)->take(3)->get();

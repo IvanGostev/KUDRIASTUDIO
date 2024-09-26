@@ -4,7 +4,7 @@ use App\Models\Seo;
 
 function seo()
 {
-    $seo = Seo::where('url', request()->path())->first();
+    $seo = Seo::where('url', request()->path())->where('lang', session()->get('language') ?? 'en')->first();
     if ($seo) {
         return $seo;
     }

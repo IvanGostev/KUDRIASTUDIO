@@ -34,6 +34,7 @@ class PostAdminController extends Controller
         }
 
         $content = $request->input('content');
+        $content = preg_replace('#<h([1-6]).*?class="(.*?)".*?>(.*?)<\/h[1-6]>#si', '<p class="heading-${1} ${2}">${3}</p>', $content);
         $content = mb_convert_encoding($content, 'html-entities', 'utf-8');
         $dom = new \DomDocument('1.0', 'utf-8');
         @$dom->loadHtml($content);
@@ -74,7 +75,8 @@ class PostAdminController extends Controller
         }
 
         $content = $request->input('content');
-        $dom = new \DomDocument();
+        $content = mb_convert_encoding($content, 'html-entities', 'utf-8');
+        $dom = new \DomDocument('1.0', 'utf-8');
         @$dom->loadHtml($content);
         $images = $dom->getElementsByTagName('img');
 

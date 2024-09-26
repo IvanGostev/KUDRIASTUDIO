@@ -14,8 +14,11 @@
     <section class="recommendations">
         @foreach($posts as $postRec)
             <a class="recommendation-post post"
-               href="{{route('post.show', ['post' => $postRec->id, 'slug' => $postRec->slug])}}">
-                <h6>{{$postRec->title}}</h6>
+               href="{{route('post.show', ['post' => $postRec->id, 'slug' => $postRec->slug,'locale' => session()->get('language') ?? 'en'])}}">
+                <div style="display: flex; justify-content: space-between">
+                    <h6>{{$postRec->title}}</h6>
+                    <i class="fa-solid fa-arrow-left right"></i>
+                </div>
                 <img src="{{ asset('storage/' . $postRec->img)}}" alt=""/>
             </a>
         @endforeach

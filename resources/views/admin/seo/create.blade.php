@@ -31,20 +31,30 @@
                                 <div class="card-body">
 
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <!-- text input -->
                                             <div class="form-group">
                                                 <label>Url</label>
                                                 <input type="text" name="url" class="form-control"
-                                                       placeholder="/posts">
+                                                       placeholder="/posts" required>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <!-- text input -->
                                             <div class="form-group">
                                                 <label>Title</label>
                                                 <input type="text" name="title" class="form-control"
-                                                       placeholder="Enter ...">
+                                                       placeholder="Enter ..." required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Language</label>
+                                                <select class="form-control" name="lang" id="" required>
+                                                    <option value="en">En</option>
+                                                    <option value="ru">Ru</option>
+                                                    <option value="es">Es</option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -55,7 +65,7 @@
                                             <!-- textarea -->
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <textarea required="" class="form-control" rows="10"
+                                                <textarea required class="form-control" rows="10"
                                                           name="description"></textarea>
                                             </div>
                                         </div>
@@ -63,7 +73,7 @@
                                             <!-- textarea -->
                                             <div class="form-group">
                                                 <label>Keywords</label>
-                                                <textarea required="" class="form-control" rows="10"
+                                                <textarea required class="form-control" rows="10"
                                                           name="keywords"></textarea>
                                             </div>
                                         </div>

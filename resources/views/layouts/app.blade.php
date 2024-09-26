@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{session()->get('language') ?? 'en'}}">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset("css/reset.css")}}"/>
     <link rel="stylesheet" href="{{ asset("css/main.css")}}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <header style="position: relative">
@@ -42,17 +43,17 @@
     </div>
     <ul class="header__menu" >
         <li class="header__item"><a class="{{request()->path() == '/' ? 'active' : ''}}"
-                                    href="{{route('index')}}">{{__('main.home')}}</a></li>
+                                    href="{{route('index', ['locale' => session()->get('language') ?? 'en'])}}">{{__('main.home')}}</a></li>
         <li class="header__item"><a class="{{request()->path() == 'portfolio' ? 'active' : ''}}"
-                                    href="{{route('portfolio')}}">{{__('main.portfolio')}}</a></li>
+                                    href="{{route('portfolio', ['locale' => session()->get('language') ?? 'en'])}}">{{__('main.portfolio')}}</a></li>
         <li class="header__item"><a class="{{str_contains(request()->path(), 'posts') ? 'active' : ''}}"
-                                    href="{{route('post.index')}}">{{__('main.blog')}}</a></li>
-        <li class="header__item"><a class="{{request()->path() == 'price' ? 'active' : ''}}" href="{{route('price')}}">{{__('main.price')}}</a>
+                                    href="{{route('post.index', ['locale' => session()->get('language') ?? 'en'])}}">{{__('main.blog')}}</a></li>
+        <li class="header__item"><a class="{{request()->path() == 'price' ? 'active' : ''}}" href="{{route('price', ['locale' => session()->get('language') ?? 'en'])}}">{{__('main.price')}}</a>
         </li>
         <li class="header__item"><a class="{{request()->path() == 'reviews' ? 'active' : ''}}"
-                                    href="{{route('reviews')}}">{{__('main.reviews')}}</a></li>
+                                    href="{{route('reviews', ['locale' => session()->get('language') ?? 'en'])}}">{{__('main.reviews')}}</a></li>
         <li class="header__item"><a class="{{request()->path() == 'contact' ? 'active' : ''}}"
-                                    href="{{route('contact')}}">{{__('main.contact')}}</a></li>
+                                    href="{{route('contact', ['locale' => session()->get('language') ?? 'en'])}}">{{__('main.contact')}}</a></li>
     </ul>
 
     <nav class="navbar">
@@ -61,23 +62,23 @@
         </a>
         <ul class="nav-menu">
             <li class="nav-item">
-                <a href="{{route('index')}}" class="nav-link {{request()->path() == '/' ? 'active' : ''}}">{{__('main.home')}}</a>
+                <a href="{{route('index', ['locale' => session()->get('language') ?? 'en'])}}" class="nav-link {{request()->path() == '/' ? 'active' : ''}}">{{__('main.home')}}</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('portfolio')}}" class="nav-link {{request()->path() == 'portfolio' ? 'active' : ''}}">{{__('main.portfolio')}}</a>
+                <a href="{{route('portfolio', ['locale' => session()->get('language') ?? 'en'])}}" class="nav-link {{request()->path() == 'portfolio' ? 'active' : ''}}">{{__('main.portfolio')}}</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('post.index')}}"
+                <a href="{{route('post.index', ['locale' => session()->get('language') ?? 'en'])}}"
                    class="nav-link {{str_contains(request()->path(), 'posts') ? 'active' : ''}}">{{__('main.blog')}}</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('price')}}" class="nav-link {{request()->path() == 'price' ? 'active' : ''}}">{{__('main.price')}}</a>
+                <a href="{{route('price', ['locale' => session()->get('language') ?? 'en'])}}" class="nav-link {{request()->path() == 'price' ? 'active' : ''}}">{{__('main.price')}}</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('reviews')}}" class="nav-link {{request()->path() == 'reviews' ? 'active' : ''}}">{{__('main.reviews')}}</a>
+                <a href="{{route('reviews', ['locale' => session()->get('language') ?? 'en'])}}" class="nav-link {{request()->path() == 'reviews' ? 'active' : ''}}">{{__('main.reviews')}}</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('contact')}}" class="nav-link {{request()->path() == 'contact' ? 'active' : ''}}">{{__('main.contact')}}</a>
+                <a href="{{route('contact', ['locale' => session()->get('language') ?? 'en'])}}" class="nav-link {{request()->path() == 'contact' ? 'active' : ''}}">{{__('main.contact')}}</a>
             </li>
             <li class="nav-item">
                 <form action="{{route('language.switch')}}" method="post">
@@ -117,18 +118,18 @@
 <footer>
     <div class="footer__top">
         <ul class="footer__menu">
-            <li class="footer__item"><a class="{{request()->path() == '/' ? 'active' : ''}}" href="{{route('index')}}">{{__('main.home')}}</a>
+            <li class="footer__item"><a class="{{request()->path() == '/' ? 'active' : ''}}" href="{{route('index', session()->get('language') ?? 'en')}}">{{__('main.home')}}</a>
             </li>
             <li class="footer__item"><a class="{{request()->path() == 'portfolio' ? 'active' : ''}}"
-                                        href="{{route('portfolio')}}">{{__('main.portfolio')}}</a></li>
+                                        href="{{route('portfolio', session()->get('language') ?? 'en')}}">{{__('main.portfolio')}}</a></li>
             <li class="footer__item"><a class="{{str_contains(request()->path(), 'posts') ? 'active' : ''}}"
-                                        href="{{route('post.index')}}">{{__('main.blog')}}</a></li>
+                                        href="{{route('post.index', session()->get('language') ?? 'en')}}">{{__('main.blog')}}</a></li>
             <li class="footer__item"><a class="{{request()->path() == 'price' ? 'active' : ''}}"
-                                        href="{{route('price')}}">{{__('main.price')}}</a></li>
+                                        href="{{route('price', session()->get('language') ?? 'en')}}">{{__('main.price')}}</a></li>
             <li class="footer__item"><a class="{{request()->path() == 'reviews' ? 'active' : ''}}"
-                                        href="{{route('reviews')}}">{{__('main.reviews')}}</a></li>
+                                        href="{{route('reviews', session()->get('language') ?? 'en')}}">{{__('main.reviews')}}</a></li>
             <li class="footer__item"><a class="{{request()->path() == 'contact' ? 'active' : ''}}"
-                                        href="{{route('contact')}}">{{__('main.contact')}}</a></li>
+                                        href="{{route('contact', session()->get('language') ?? 'en')}}">{{__('main.contact')}}</a></li>
         </ul>
         <div class="footer__social">
             <a href="https://www.instagram.com/kudryastudio/"><img src="{{ asset('img/inst.svg')}}" alt=""
@@ -154,6 +155,118 @@
     gtag('js', new Date());
 
     gtag('config', 'G-P511YDKMW7');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-JobWAqYk5CSjWuVV3mxgS+MmccJqkrBaDhk8SKS1BW+71dJ9gzascwzW85UwGhxiSyR7Pxhu50k+Nl3+o5I49A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    // vars
+    'use strict'
+    var testim = document.getElementById("testim"),
+        testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+        testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+        testimLeftArrow = document.getElementById("left-arrow"),
+        testimRightArrow = document.getElementById("right-arrow"),
+        testimSpeed = 4500,
+        currentSlide = 0,
+        currentActive = 0,
+        testimTimer,
+        touchStartPos,
+        touchEndPos,
+        touchPosDiff,
+        ignoreTouch = 30;
+    ;
+
+    window.onload = function() {
+
+        // Testim Script
+        function playSlide(slide) {
+            for (var k = 0; k < testimDots.length; k++) {
+                testimContent[k].classList.remove("active");
+                testimContent[k].classList.remove("inactive");
+                testimDots[k].classList.remove("active");
+            }
+
+            if (slide < 0) {
+                slide = currentSlide = testimContent.length-1;
+            }
+
+            if (slide > testimContent.length - 1) {
+                slide = currentSlide = 0;
+            }
+
+            if (currentActive != currentSlide) {
+                testimContent[currentActive].classList.add("inactive");
+            }
+            testimContent[slide].classList.add("active");
+            testimDots[slide].classList.add("active");
+
+            currentActive = currentSlide;
+
+            clearTimeout(testimTimer);
+            testimTimer = setTimeout(function() {
+                playSlide(currentSlide += 1);
+            }, testimSpeed)
+        }
+
+        testimLeftArrow.addEventListener("click", function() {
+            playSlide(currentSlide -= 1);
+        })
+
+        testimRightArrow.addEventListener("click", function() {
+            playSlide(currentSlide += 1);
+        })
+
+        for (var l = 0; l < testimDots.length; l++) {
+            testimDots[l].addEventListener("click", function() {
+                playSlide(currentSlide = testimDots.indexOf(this));
+            })
+        }
+
+        playSlide(currentSlide);
+
+        // keyboard shortcuts
+        document.addEventListener("keyup", function(e) {
+            switch (e.keyCode) {
+                case 37:
+                    testimLeftArrow.click();
+                    break;
+
+                case 39:
+                    testimRightArrow.click();
+                    break;
+
+                case 39:
+                    testimRightArrow.click();
+                    break;
+
+                default:
+                    break;
+            }
+        })
+
+        testim.addEventListener("touchstart", function(e) {
+            touchStartPos = e.changedTouches[0].clientX;
+        })
+
+        testim.addEventListener("touchend", function(e) {
+            touchEndPos = e.changedTouches[0].clientX;
+
+            touchPosDiff = touchStartPos - touchEndPos;
+
+            console.log(touchPosDiff);
+            console.log(touchStartPos);
+            console.log(touchEndPos);
+
+
+            if (touchPosDiff > 0 + ignoreTouch) {
+                testimLeftArrow.click();
+            } else if (touchPosDiff < 0 - ignoreTouch) {
+                testimRightArrow.click();
+            } else {
+                return;
+            }
+
+        })
+    }
 </script>
 </body>
 </html>

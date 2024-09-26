@@ -27,8 +27,10 @@ class LanguageController extends Controller
      */
     public function switch(Request $request)
     {
+        $oldLanguage = session()->get('language');
         session()->put('language', $request->input('language'));
-        return redirect()->back();
+        $url = str_replace($oldLanguage, session()->get('language') ,url()->previous());
+        return redirect($url);
     }
 
 }

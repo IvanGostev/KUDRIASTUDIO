@@ -13,36 +13,41 @@ use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::controller(SitemapController::class)->group(function ()  {
+Route::get('/', function () {
+    return redirect(app()->getLocale());
+});
+
+Route::controller(SitemapController::class)->group(function () {
     Route::get('/sitemap', 'index');
     Route::get('/sitemap/posts', 'posts');
     Route::get('/sitemap/categories', 'categories');
 });
 
-
-
-Route::controller(LanguageController::class)->group(function ()  {
+Route::controller(LanguageController::class)->group(function () {
     Route::post('/language-switch', 'switch')->name('language.switch');
 });
+Route::group(['prefix' => '{locale}',
+    'where' => ['locale' => '[a-zA-Z]{2}'],
+    'middleware' => 'setlocale'], function () {
 
-Route::controller(MainController::class)->group(function ()  {
-    Route::get('/', 'index')->name('index');
-    Route::get('/portfolio', 'portfolio')->name('portfolio');
-    Route::get('/price', 'price')->name('price');
-    Route::get('/reviews', 'reviews')->name('reviews');
-    Route::get('/contact', 'contact')->name('contact');
-    Route::post('/contact', 'store')->name('contact.store');
+    Route::controller(MainController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/portfolio', 'portfolio')->name('portfolio');
+        Route::get('/price', 'price')->name('price');
+        Route::get('/reviews', 'reviews')->name('reviews');
+        Route::get('/contact', 'contact')->name('contact');
+        Route::post('/contact', 'store')->name('contact.store');
+    });
+    Route::controller(PostController::class)->prefix('blog')->group(function () {
+        Route::get('/', 'index')->name('post.index');
+        Route::get('/search', 'search')->name('post.search');
+        Route::get('/{post}~{slug}', 'show')->name('post.show');
+    });
 });
-Route::controller(PostController::class)->prefix('blog')->group(function ()  {
-    Route::get('/', 'index')->name('post.index');
-    Route::get('/search', 'search')->name('post.search');
-    Route::get('{post}~{slug}', 'show')->name('post.show');
-});
-
 
 
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::controller(PostAdminController::class)->prefix('posts')->group(function ()  {
+    Route::controller(PostAdminController::class)->prefix('posts')->group(function () {
         Route::get('/', 'index')->name('admin.post.index');
         Route::get('/create', 'create')->name('admin.post.create');
         Route::post('/', 'store')->name('admin.post.store');
@@ -61,7 +66,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     });
 
 
-    Route::controller(ReviewAdminController::class)->prefix('reviews')->group(function ()  {
+    Route::controller(ReviewAdminController::class)->prefix('reviews')->group(function () {
         Route::get('/', 'index')->name('admin.review.index');
         Route::get('/create', 'create')->name('admin.review.create');
         Route::post('/', 'store')->name('admin.review.store');
@@ -69,16 +74,16 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::patch('{review}', 'update')->name('admin.review.update');
         Route::delete('{review}/destroy', 'destroy')->name('admin.review.destroy');
     });
-    Route::controller(MessageAdminController::class)->prefix('messages')->group(function ()  {
+    Route::controller(MessageAdminController::class)->prefix('messages')->group(function () {
         Route::get('/', 'index')->name('admin.message.index');
         Route::delete('{message}/destroy', 'destroy')->name('admin.message.destroy');
     });
-    Route::controller(WorkAdminController::class)->prefix('portfolio')->group(function ()  {
+    Route::controller(WorkAdminController::class)->prefix('portfolio')->group(function () {
         Route::get('/', 'index')->name('admin.work.index');
         Route::post('/', 'store')->name('admin.work.store');
         Route::delete('{work}/destroy', 'destroy')->name('admin.work.destroy');
     });
-    Route::controller(SeoAdminController::class)->prefix('seo')->group(function ()  {
+    Route::controller(SeoAdminController::class)->prefix('seo')->group(function () {
         Route::get('/', 'index')->name('admin.seo.index');
         Route::get('/create', 'create')->name('admin.seo.create');
         Route::post('/', 'store')->name('admin.seo.store');

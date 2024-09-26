@@ -29,7 +29,8 @@ class MainController extends Controller
     {
         $language = session()->get('language') ?? 'en';
         $posts = Post::where('lang', $language)->latest()->take(3)->get();
-        return view('index', compact('posts'));
+        $reviews = Review::where('lang', $language)->latest()->take(5)->get();
+        return view('index', compact('posts', 'reviews'));
     }
 
     public function portfolio()

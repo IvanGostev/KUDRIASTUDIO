@@ -15,17 +15,28 @@
                         <div class="card">
                             <div class="card-header">
                                 <form action="{{route('admin.work.store')}}" method="post"
-                                      enctype="multipart/form-data" style="display: flex; flex-direction: row; gap: 10px">
+                                      enctype="multipart/form-data"
+                                      >
                                     @csrf
-                                    <div class="form-group">
-                                        <input type="file" accept="video/mp4,video/x-m4v,video/*" name="src" style="border: 1px black solid">
+                                    <div class="row" style="display: flex; flex-direction: row; gap: 10px">
+                                        <div class="form-group">
+                                            <input type="file" class="form-control"
+                                                   accept="video/mp4,video/x-m4v,video/*" name="src"
+                                                   style="border: 1px black solid">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Or enter the url"
+                                                   name="url">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <p>OR</p>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="description"
+                                                      placeholder="Description ..."></textarea>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Enter the url" name="url">
-                                    </div>
+
                                     <div class="form-group">
                                         <button class="btn btn-dark" type="submit">Add video</button>
                                     </div>
