@@ -67,8 +67,9 @@ return [
 <br>
 <br>
 <span style='font-size: 22px'>Контактная информация</span> <br>
-
-Телефон: +34 653 21 95 80
+Телефон: +34 601 167 675
+<br>
+Instagram: KUDRYASTUDO
 
 <br>
 <br>

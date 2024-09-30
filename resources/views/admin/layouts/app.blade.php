@@ -134,6 +134,7 @@
             ['picture'],
             ['table'],
             ['hr'],
+            ['link'],
         ]
     });
 </script>

@@ -67,8 +67,9 @@ At KUDRYASTUDIO, we offer a unique approach to wedding videography. Each of our 
 <br>
 <br>
 <span style='font-size: 22px'>Contact Information</span> <br>
-
-Phone: +34 653 21 95 80
+Phone: +34 601 167 675
+<br>
+Instagram: KUDRYASTUDO
 
 <br>
 <br>
