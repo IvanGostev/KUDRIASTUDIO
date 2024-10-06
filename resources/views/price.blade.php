@@ -1,27 +1,27 @@
 @extends('layouts.app')
 @section('content')
     <section class="price">
-        <h1 class="price__title">{{__('main.title-price')}}</h1>
+        <h2 class="price__title">{{__('main.title-price')}}</h2>
         <div class="product">
             <h2 class="product__title">{{__('main.wf')}}</h2>
-            <p class="product__text">
+            <h6 class="product__text">
                 {!! __('main.wf-desc') !!}
-            </p>
+            </h6>
             <h3 class="product__price">2000 €</h3>
             <img src="{{ asset('img/WEDDINGFULL.png')}}" alt="" class="product__img" />
         </div>
         <div class="product">
             <h2 class="product__title">{{__('main.wm')}}</h2>
-            <p class="product__text">
+            <h6 class="product__text">
                 {!! __('main.wm-desc') !!}
-            </p>
+            </h6>
             <h3 class="product__price">1000 €</h3>
             <img src="{{ asset('img/WEDDINGMINI.png')}}" alt="" class="product__img" />
         </div>
         <div class="product ">
-            <p class="product__text extras">
+            <h6 class="product__text extras">
                 {!! __('main.product') !!}
-            </p>
+            </h6>
         </div>
     </section>
 @endsection

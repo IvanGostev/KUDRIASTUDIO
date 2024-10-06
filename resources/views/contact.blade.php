@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section class="title">
-        <h1>{{__('main.title-contact')}}</h1>
+        <h2>{{__('main.title-contact')}}</h2>
     </section>
     <section class="contact">
         <div class="contact__img">

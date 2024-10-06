@@ -27,16 +27,6 @@
             cursor: pointer;
             font-size: 2em;
             top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            -moz-transform: translateY(-50%);
-            -o-transform: translateY(-50%);
-            transform: translateY(-50%);
-            -webkit-transition: all .3s ease-in-out;
-            -ms-transition: all .3s ease-in-out;
-            -moz-transition: all .3s ease-in-out;
-            -o-transition: all .3s ease-in-out;
-            transition: all .3s ease-in-out;
             padding: 5px;
             z-index: 22222222;
         }
@@ -78,11 +68,6 @@
             border: 1px solid black;
             margin: 0 10px;
             cursor: pointer;
-            -webkit-transition: all .5s ease-in-out;
-            -ms-transition: all .5s ease-in-out;
-            -moz-transition: all .5s ease-in-out;
-            -o-transition: all .5s ease-in-out;
-            transition: all .5s ease-in-out;
             position: relative;
         }
 
@@ -92,13 +77,7 @@
             border-color: black;
         }
 
-        .testim .dots .dot.active {
-            -webkit-animation: testim-scale .5s ease-in-out forwards;
-            -moz-animation: testim-scale .5s ease-in-out forwards;
-            -ms-animation: testim-scale .5s ease-in-out forwards;
-            -o-animation: testim-scale .5s ease-in-out forwards;
-            animation: testim-scale .5s ease-in-out forwards;
-        }
+
 
         .testim .cont {
             position: relative;
@@ -146,21 +125,6 @@
             margin: auto;
         }
 
-        .testim .cont div.active .img img {
-            -webkit-animation: testim-show .5s ease-in-out forwards;
-            -moz-animation: testim-show .5s ease-in-out forwards;
-            -ms-animation: testim-show .5s ease-in-out forwards;
-            -o-animation: testim-show .5s ease-in-out forwards;
-            animation: testim-show .5s ease-in-out forwards;
-        }
-
-        .testim .cont div.active h2 {
-            -webkit-animation: testim-content-in .4s ease-in-out forwards;
-            -moz-animation: testim-content-in .4s ease-in-out forwards;
-            -ms-animation: testim-content-in .4s ease-in-out forwards;
-            -o-animation: testim-content-in .4s ease-in-out forwards;
-            animation: testim-content-in .4s ease-in-out forwards;
-        }
 
         .testim .cont div.active p {
             -webkit-animation: testim-content-in .5s ease-in-out forwards;
@@ -194,383 +158,53 @@
             animation: testim-content-out .5s ease-in-out forwards;
         }
 
-        @-webkit-keyframes testim-scale {
-            0% {
-                -webkit-box-shadow: 0px 0px 0px 0px black;
-                box-shadow: 0px 0px 0px 0px black;
-            }
 
-            35% {
-                -webkit-box-shadow: 0px 0px 10px 5px black;
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            70% {
-                -webkit-box-shadow: 0px 0px 10px 5px black;
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            100% {
-                -webkit-box-shadow: 0px 0px 0px 0px black;
-                box-shadow: 0px 0px 0px 0px black;
-            }
-        }
-
-        @-moz-keyframes testim-scale {
-            0% {
-                -moz-box-shadow: 0px 0px 0px 0px black;
-                box-shadow: 0px 0px 0px 0px black;
-            }
-
-            35% {
-                -moz-box-shadow: 0px 0px 10px 5px black;
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            70% {
-                -moz-box-shadow: 0px 0px 10px 5px black;
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            100% {
-                -moz-box-shadow: 0px 0px 0px 0px black;
-                box-shadow: 0px 0px 0px 0px black;
-            }
-        }
-
-        @-ms-keyframes testim-scale {
-            0% {
-                -ms-box-shadow: 0px 0px 0px 0px black;
-                box-shadow: 0px 0px 0px 0px black;
-            }
-
-            35% {
-                -ms-box-shadow: 0px 0px 10px 5px black;
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            70% {
-                -ms-box-shadow: 0px 0px 10px 5px black;
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            100% {
-                -ms-box-shadow: 0px 0px 0px 0px black;
-                box-shadow: 0px 0px 0px 0px black;
-            }
-        }
-
-        @-o-keyframes testim-scale {
-            0% {
-                -o-box-shadow: 0px 0px 0px 0px black;
-                box-shadow: 0px 0px 0px 0px black;
-            }
-
-            35% {
-                -o-box-shadow: 0px 0px 10px 5px black;
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            70% {
-                -o-box-shadow: 0px 0px 10px 5px black;
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            100% {
-                -o-box-shadow: 0px 0px 0px 0px black;
-                box-shadow: 0px 0px 0px 0px black;
-            }
-        }
-
-        @keyframes testim-scale {
-            0% {
-                box-shadow: 0px 0px 0px 0px black;
-            }
-
-            35% {
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            70% {
-                box-shadow: 0px 0px 10px 5px black;
-            }
-
-            100% {
-                box-shadow: 0px 0px 0px 0px black;
-            }
-        }
 
         @-webkit-keyframes testim-content-in {
             from {
                 opacity: 0;
-                -webkit-transform: translateY(100%);
-                transform: translateY(100%);
             }
 
             to {
                 opacity: 1;
-                -webkit-transform: translateY(0);
-                transform: translateY(0);
             }
         }
 
         @-moz-keyframes testim-content-in {
             from {
                 opacity: 0;
-                -moz-transform: translateY(100%);
-                transform: translateY(100%);
             }
 
             to {
                 opacity: 1;
-                -moz-transform: translateY(0);
-                transform: translateY(0);
             }
         }
 
-        @-ms-keyframes testim-content-in {
-            from {
-                opacity: 0;
-                -ms-transform: translateY(100%);
-                transform: translateY(100%);
-            }
-
-            to {
-                opacity: 1;
-                -ms-transform: translateY(0);
-                transform: translateY(0);
-            }
-        }
-
-        @-o-keyframes testim-content-in {
-            from {
-                opacity: 0;
-                -o-transform: translateY(100%);
-                transform: translateY(100%);
-            }
-
-            to {
-                opacity: 1;
-                -o-transform: translateY(0);
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes testim-content-in {
-            from {
-                opacity: 0;
-                transform: translateY(100%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
         @-webkit-keyframes testim-content-out {
             from {
                 opacity: 1;
-                -webkit-transform: translateY(0);
-                transform: translateY(0);
+
             }
 
             to {
                 opacity: 0;
-                -webkit-transform: translateY(-100%);
-                transform: translateY(-100%);
+
             }
         }
 
         @-moz-keyframes testim-content-out {
             from {
                 opacity: 1;
-                -moz-transform: translateY(0);
-                transform: translateY(0);
             }
 
             to {
                 opacity: 0;
-                -moz-transform: translateY(-100%);
-                transform: translateY(-100%);
             }
         }
 
-        @-ms-keyframes testim-content-out {
-            from {
-                opacity: 1;
-                -ms-transform: translateY(0);
-                transform: translateY(0);
-            }
 
-            to {
-                opacity: 0;
-                -ms-transform: translateY(-100%);
-                transform: translateY(-100%);
-            }
-        }
 
-        @-o-keyframes testim-content-out {
-            from {
-                opacity: 1;
-                -o-transform: translateY(0);
-                transform: translateY(0);
-            }
-
-            to {
-                opacity: 0;
-                transform: translateY(-100%);
-                transform: translateY(-100%);
-            }
-        }
-
-        @keyframes testim-content-out {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            to {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-        }
-
-        @-webkit-keyframes testim-show {
-            from {
-                opacity: 0;
-                -webkit-transform: scale(0);
-                transform: scale(0);
-            }
-
-            to {
-                opacity: 1;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        @-moz-keyframes testim-show {
-            from {
-                opacity: 0;
-                -moz-transform: scale(0);
-                transform: scale(0);
-            }
-
-            to {
-                opacity: 1;
-                -moz-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        @-ms-keyframes testim-show {
-            from {
-                opacity: 0;
-                -ms-transform: scale(0);
-                transform: scale(0);
-            }
-
-            to {
-                opacity: 1;
-                -ms-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        @-o-keyframes testim-show {
-            from {
-                opacity: 0;
-                -o-transform: scale(0);
-                transform: scale(0);
-            }
-
-            to {
-                opacity: 1;
-                -o-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        @keyframes testim-show {
-            from {
-                opacity: 0;
-                transform: scale(0);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @-webkit-keyframes testim-hide {
-            from {
-                opacity: 1;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-
-            to {
-                opacity: 0;
-                -webkit-transform: scale(0);
-                transform: scale(0);
-            }
-        }
-
-        @-moz-keyframes testim-hide {
-            from {
-                opacity: 1;
-                -moz-transform: scale(1);
-                transform: scale(1);
-            }
-
-            to {
-                opacity: 0;
-                -moz-transform: scale(0);
-                transform: scale(0);
-            }
-        }
-
-        @-ms-keyframes testim-hide {
-            from {
-                opacity: 1;
-                -ms-transform: scale(1);
-                transform: scale(1);
-            }
-
-            to {
-                opacity: 0;
-                -ms-transform: scale(0);
-                transform: scale(0);
-            }
-        }
-
-        @-o-keyframes testim-hide {
-            from {
-                opacity: 1;
-                -o-transform: scale(1);
-                transform: scale(1);
-            }
-
-            to {
-                opacity: 0;
-                -o-transform: scale(0);
-                transform: scale(0);
-            }
-        }
-
-        @keyframes testim-hide {
-            from {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            to {
-                opacity: 0;
-                transform: scale(0);
-            }
-        }
 
         @media all and (max-width: 300px) {
             body {
@@ -631,7 +265,12 @@
             </div>
 
         @endif
-        <div class="main__posts">
+        <div style="padding:44.27% 0 0 0;position:relative; margin: 0.8rem 0 0.8rem 0; ">
+            <iframe src="https://player.vimeo.com/video/998207655?title=0&byline=0&portrait=0"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="main__posts" style=" border-top: 3px solid black;">
             @foreach($posts as $postActive)
                 <a class="post"
                    href="{{route('post.show', ['locale' => session()->get('language') ?? 'en', 'post' => $postActive->id, 'slug' => $postActive->slug])}}">

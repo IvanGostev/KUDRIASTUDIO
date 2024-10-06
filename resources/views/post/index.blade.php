@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section class="title">
-        <h1>{{__('main.title-blog')}}</h1>
+        <h2>{{__('main.title-blog')}}</h2>
     </section>
     <section class="posts">
         <form action="{{route('post.search', ['locale' => session()->get('language') ?? 'en'])}}" style="display: flex; justify-content: right; font-size: 20px; align-items: center; width: 100%">
