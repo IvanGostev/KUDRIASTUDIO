@@ -39,9 +39,9 @@ return [
                 Tiempo de producción hasta <span>2-3 meses</span> <br />
                 Hora adicional <span>200 €</span>",
     'wm' => "BODA MINI",
-    'wm-desc' => "Grabación de video hasta <span>12 horas</span>Obra de
+    'wm-desc' => "Grabación de video hasta <span>6 horas</span>Obra de
                 <span>2 operadores</span> <br />
-                Edición de video <span> (10-20 minutos) Teaser 1-2 minutos</span><br />
+                Edición de video <span> (5-10 minutos) Teaser 1-2 minutos</span><br />
                 <span>Corrección de color del autor</span> y
                 <span>Diseño de sonido</span> <br />
                 Dron (dependiendo de las condiciones climáticas y las capacidades de ubicación)

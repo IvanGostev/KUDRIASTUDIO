@@ -39,14 +39,15 @@ return [
                 Production time up to <span>2-3 months</span> <br />
                 Additional hour <span>200 €</span>",
     'wm' => "WEDDING MINI",
-    'wm-desc' => "Video recording up to <span>12 hours</span> Work of
+    'wm-desc' => "Video recording up to <span>6 hours</span> Work of
                 <span>2 operators</span> <br />
-                Video editing <span> (10-20 minutes) Teaser 1-2 minutes</span><br />
+                Video editing <span> (5-10 minutes) Teaser 1-2 minutes</span><br />
                 <span>Author's color correction </span> and
                 <span>Sound design</span> <br />
                 Drone (depending on weather conditions and location capabilities)
                 Production time up to <span>2-3 months</span> <br />
                 Additional hour <span>200 €</span>",
+
     'product' => "<span>+ TEASER FOR INSTAGRAM - 200 €</span> <br />
                 <span>+ ARCHIVE FILM - 500 €</span> <br />
                 <span>+ ADDITIONAL OPERATOR 12 HOURS - 400 €</span> <br />
